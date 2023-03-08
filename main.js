@@ -4,35 +4,35 @@ let tabla = [
         traditional: "90-100",
         point_range: "12-14",
         letter: "A",
-        sbg_rating: "4",
+        sbg_rating: "5",
         level: "Exceeds proficiency"
     },
     {
         traditional: "80-89",
         point_range: "9-11",
         letter: "B",
-        sbg_rating: "3",
+        sbg_rating: "4",
         level: "Demonstrates proficiency"
     },
     {
         traditional: "70-79",
         point_range: "6-8",
         letter: "C",
-        sbg_rating: "2",
+        sbg_rating: "3",
         level: "Approaches proficiency"
     },
     {
         traditional: "60-69",
         point_range: "3-5",
         letter: "D",
-        sbg_rating: "1",
+        sbg_rating: "2",
         level: "Falls well bellow proficiency"
     }
     , {
         traditional: "<60",
         point_range: "1-2",
         letter: "E",
-        sbg_rating: "0",
+        sbg_rating: "1",
         level: "Lacks all proficiency"
     },
     {
@@ -48,13 +48,14 @@ console.table(tabla);
 
 let opcion = prompt("Introduzca una opción: \nA. Ingreso por notas (0-100) \nB. Ingreso por puntos (0 - 14) \nC. Ingreso por letra (A-F)");
 
+
 switch (opcion) {
     case 'a':
         let nota = prompt("Ingresa una nota de 0 a 100.");
         traditional(nota);
         break;
     case 'b':
-        let point = prompt("Ingresa un puntaje de 0 a 12");
+        let point = prompt("Ingresa un puntaje de 0 a 14");
         point_range(point);
         break;
 
@@ -183,5 +184,6 @@ function letter(letra) {
 }
 
 function returnSBG(index) {
-    console.log("El rating SBG del evaluado es: ", tabla[index].sbg_rating, " \nRecomendacion : " , tabla[index].level);
+    console.log(`El rating SBG del evaluado es: ${tabla[index].sbg_rating}  \nRecomendacion: ${tabla[index].level}`);
 }
+
